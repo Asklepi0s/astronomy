@@ -3,5 +3,4 @@
 data/*
 
 # exception to the rule
-!data/.gitkeep
 !data/*description.txt

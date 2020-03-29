@@ -1,6 +1,6 @@
 # Hertzsprung-Russell Diagram
 
-Diagram organizing stars by the amount (luminosity) and characteristics of light (spectral classification) they admit.
+Diagram organizing stars by the amount of light (luminosity) and characteristics of light (spectral classification) they emit.
 
 For more information please visit [link](https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram)
 

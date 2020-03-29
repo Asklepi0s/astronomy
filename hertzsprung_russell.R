@@ -1,7 +1,13 @@
 #Hertzprung-Russell Diagram
 
+# Packages
+library(ggplot2)
+library(data.table)
+
+# Import
 df = fread('~/astronomy/data/hygdata_etl_output.csv')
 
+# Plot
 plot_data = df[(dist_ly < 1000) & ci < 2 & spectral_harvard %in% c('O','A','B','D','F','G','K','M')]
 
 plot_label = plot_data[proper %in% c('Proxima Centauri','Aldebaran',

@@ -1,6 +1,5 @@
 library(data.table)
 library(stringr)
-library(ggplot2)
 source('~/astronomy/astro_util.R')
 
 

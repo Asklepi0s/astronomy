@@ -4,6 +4,7 @@ library(ggplot2)
 source('~/astronomy/astro_util.R')
 
 
+
 ### EXTRACT ###
 
 data_file_name = '~/astronomy/data/hygdata_v3.csv'
@@ -54,5 +55,7 @@ df[!spectral_harvard %in% c('Unknown','Spectral Peculiarity'),spectral_tail := g
 df[!spectral_harvard %in% c('Unknown','Spec1tral Peculiarity'),spectral_temperature := gsub('(^[0-9]*)(.*)','\\1',spectral_temperature)]
 
 
+
 ### Load ###
+
 fwrite(df,'~/astronomy/data/hygdata_etl_output.csv',sep = ',')

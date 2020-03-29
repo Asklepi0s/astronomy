@@ -10,11 +10,11 @@ Below is an example of what we are trying to produce
 
 Using the Hyg-Database we can produce something very similar
 
-![Our Hertzsprung-Russell Diagram](https://github.com/Asklepi0s/astronomy/blob/master/output/herzsprung_russell.png)
+![Our Hertzsprung-Russell Diagram](https://github.com/Asklepi0s/astronomy/blob/master/output/hertzsprung_russell.png)
 
 # Instructions
 
 1) Run `hygdata_etl.R`
 
-2) Run `herzsprung_russell.R`
+2) Run `hertzsprung_russell.R`
 

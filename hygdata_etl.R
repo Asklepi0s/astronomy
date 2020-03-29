@@ -1,12 +1,12 @@
 library(data.table)
 library(stringr)
 library(ggplot2)
-source('~/exoplanets/astro_util.R')
+source('~/astronomy/astro_util.R')
 
 
 ### EXTRACT ###
 
-data_file_name = '~/exoplanets/data/hygdata_v3.csv'
+data_file_name = '~/astronomy/data/hygdata_v3.csv'
 source_file_name = 'https://raw.githubusercontent.com/astronexus/HYG-Database/master/hygdata_v3.csv'
 
 if(file.exists(data_file_name)){
@@ -54,22 +54,5 @@ df[!spectral_harvard %in% c('Unknown','Spectral Peculiarity'),spectral_tail := g
 df[!spectral_harvard %in% c('Unknown','Spec1tral Peculiarity'),spectral_temperature := gsub('(^[0-9]*)(.*)','\\1',spectral_temperature)]
 
 
-### PLOT ###
-
-#Herzprung-Russell plot
-plot_data = df[(dist_ly < 1000) & ci < 2 & spectral_harvard %in% c('O','A','B','D','F','G','K','M')]
-
-plot_label = plot_data[proper %in% c('Proxima Centauri','Aldebaran',
-                                     'Sol','Vega','Betelgeuse','Polaris',
-                                     'Formalhaut','Procyon','Rigel')]
-
-plot = ggplot(plot_data, aes(ci,log(lum),color = spectral_harvard)) + 
-  geom_point(alpha = 0.3) + 
-  geom_label(data=plot_label, aes(label=proper), label.size = 0.35, color = "black")
-
-plot + scale_color_manual("Harvard Classification",
-                          values=c("lightblue","blue","dodgerblue1","#ccffff","yellow","orange","red","darkblue")) + 
-  labs(title = 'Herzsprung-Russell', 
-       subtitle = 'Main sequence stars within 1000 ly from sun',
-       caption = 'Hyg-Database https://github.com/astronexus/HYG-Database',
-       x = 'Color (B-V)', y='Luminosity(Sun = 1)')
+### Load ###
+fwrite(df,'~/astronomy/data/hygdata_etl_output.csv',sep = ',')

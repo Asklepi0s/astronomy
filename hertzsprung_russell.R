@@ -1,4 +1,4 @@
-#Herzprung-Russell Diagram
+#Hertzprung-Russell Diagram
 
 df = fread('~/astronomy/data/hygdata_etl_output.csv')
 
@@ -14,7 +14,7 @@ plot = ggplot(plot_data, aes(ci,log(lum),color = spectral_harvard)) +
 
 plot + scale_color_manual("Harvard Classification",
                           values=c("lightblue","blue","dodgerblue1","#ccffff","yellow","orange","red","darkblue")) + 
-  labs(title = 'Herzsprung-Russell', 
+  labs(title = 'Hertzsprung-Russell', 
        subtitle = 'Main sequence stars within 1000 ly from sun',
        caption = 'Hyg-Database https://github.com/astronexus/HYG-Database',
        x = 'Color (B-V)', y='Luminosity(Sun = 1)')

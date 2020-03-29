@@ -3,7 +3,7 @@
 Repository for all my astronomy projects.
 
 # Projects
-- [Herzsprung-Russell Diagram](herzsprung_russell.md)
+- [Hertzsprung-Russell Diagram](hertzsprung_russell.md)
 
 # Requirements
 Packages: Stringr, Data.table
